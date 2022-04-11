@@ -1,0 +1,17 @@
+package hyk.springframework.springemployeerestapi.controller.v1;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+/**
+ * @author Htoo Yanant Khin
+ */
+public abstract class AbstractRestControllerTest {
+
+    public static String asJsonString(final Object obj) {
+        try {
+            return new ObjectMapper().writeValueAsString(obj);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
