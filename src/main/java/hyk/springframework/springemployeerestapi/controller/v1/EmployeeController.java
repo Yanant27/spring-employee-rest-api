@@ -24,7 +24,7 @@ public class EmployeeController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public EmployeeListDTO getListOfEmployees()  {
+    public EmployeeListDTO getListOfEmployees() {
         return new EmployeeListDTO(employeeService.getAllEmployees());
     }
 
