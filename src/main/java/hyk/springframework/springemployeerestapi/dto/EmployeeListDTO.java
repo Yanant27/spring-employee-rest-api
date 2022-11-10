@@ -1,4 +1,4 @@
-package hyk.springframework.springemployeerestapi.api.v1.model;
+package hyk.springframework.springemployeerestapi.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,15 +1,15 @@
 package hyk.springframework.springemployeerestapi.service;
 
-import hyk.springframework.springemployeerestapi.api.v1.mapper.EmployeeMapper;
-import hyk.springframework.springemployeerestapi.api.v1.model.EmployeeDTO;
+import hyk.springframework.springemployeerestapi.dto.mapper.EmployeeMapper;
+import hyk.springframework.springemployeerestapi.dto.EmployeeDTO;
 import hyk.springframework.springemployeerestapi.controller.v1.EmployeeController;
 import hyk.springframework.springemployeerestapi.domain.Employee;
 import hyk.springframework.springemployeerestapi.exception.ResourceNotFoundException;
 import hyk.springframework.springemployeerestapi.repository.EmployeeRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -19,14 +19,10 @@ import java.util.stream.Collectors;
  * @author Htoo Yanant Khin
  */
 @Service
+@RequiredArgsConstructor
 public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeMapper employeeMapper;
     private final EmployeeRepository employeeRepository;
-
-    public EmployeeServiceImpl(EmployeeMapper employeeMapper, EmployeeRepository employeeRepository) {
-        this.employeeMapper = employeeMapper;
-        this.employeeRepository = employeeRepository;
-    }
 
     /**
      * Retrieve all employees from <code>Employees</code> table.
@@ -96,14 +92,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeRepository.deleteById(id);
     }
 
-    private EmployeeDTO findEmployeeInRepository(Long id) {
-        return employeeRepository.findById(id)
-                .map(employee -> {
-                    EmployeeDTO employeeDTO = employeeMapper.employeeToEmployeeDto(employee);
-                    employeeDTO.setEmployeeUrl(getEmployeeUrl(employee.getId()));
-                    return employeeDTO;
-                }).orElseThrow(()->new ResourceNotFoundException("Employee not found with ID = " + id));
-    }
     /**
      * Create URL with requested <i>id</i>.
      *

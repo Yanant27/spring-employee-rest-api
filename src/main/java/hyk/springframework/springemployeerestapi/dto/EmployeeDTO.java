@@ -1,4 +1,4 @@
-package hyk.springframework.springemployeerestapi.api.v1.model;
+package hyk.springframework.springemployeerestapi.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

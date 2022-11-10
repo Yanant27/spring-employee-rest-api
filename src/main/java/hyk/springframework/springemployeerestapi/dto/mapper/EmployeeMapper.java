@@ -1,6 +1,6 @@
-package hyk.springframework.springemployeerestapi.api.v1.mapper;
+package hyk.springframework.springemployeerestapi.dto.mapper;
 
-import hyk.springframework.springemployeerestapi.api.v1.model.EmployeeDTO;
+import hyk.springframework.springemployeerestapi.dto.EmployeeDTO;
 import hyk.springframework.springemployeerestapi.domain.Employee;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

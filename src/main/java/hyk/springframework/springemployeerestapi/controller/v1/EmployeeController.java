@@ -1,7 +1,7 @@
 package hyk.springframework.springemployeerestapi.controller.v1;
 
-import hyk.springframework.springemployeerestapi.api.v1.model.EmployeeDTO;
-import hyk.springframework.springemployeerestapi.api.v1.model.EmployeeListDTO;
+import hyk.springframework.springemployeerestapi.dto.EmployeeDTO;
+import hyk.springframework.springemployeerestapi.dto.EmployeeListDTO;
 import hyk.springframework.springemployeerestapi.service.EmployeeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
